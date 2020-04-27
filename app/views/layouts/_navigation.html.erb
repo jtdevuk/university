@@ -29,4 +29,15 @@
     <li><a href="#">Enrollment</a></li>
     <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li>
   </ul>
+  <% flash.each do |key, message| %>
+    <div class="row sign-up-box">
+      <div class="col s12 m12 l12">
+        <div class="card-panel red lighten-2" id="fade-out-target">
+          <span class="white-text">
+            <%= message %>
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </header>
