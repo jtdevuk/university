@@ -13,8 +13,8 @@
             <p>Email: <%= student.email %></p>
           <p>Course enrollments: None</p>
         </div>
-        <div class="card-action">
-          <a href="#">View Profile</a>
+        <div class="card-action">          
+          <%= link_to "View profile", student_path(student) %>
         </div>
       </div>
     </div>
