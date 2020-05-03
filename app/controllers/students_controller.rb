@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
-  skip_before_action :require_user, only: [:new, :create]
   before_action :set_student, only: [:show, :edit, :update]
   before_action :require_same_student, only: [:edit, :update]
+  skip_before_action :require_user, only: [:new, :create]
 
   def index
     @students = Student.all
@@ -15,6 +15,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.save
       flash[:notice] = "You have successfully signed up"
+      session[:student_id] = @student.id
       redirect_to @student
     else
       render 'new'
